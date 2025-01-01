@@ -1,0 +1,149 @@
+.sidebar .sidebar-brand {
+    height: 5rem;
+}
+
+.pagination {
+    margin-top: 1rem;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.form-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: lightgray;
+    position: relative;
+}
+
+.form-avatar::before {
+    content: '\f007';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.form-avatar:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.form-avatar > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.form-avatar:hover > img {
+    opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        width: 26rem !important;
+    }
+
+    .sidebar .nav-item .nav-link {
+        display: block;
+        text-align: left;
+        padding: 1rem 2rem;
+        width: 14rem;
+    }
+}
+
+.table {
+    border-width: 0 !important;
+}
+
+.table thead {
+    display: none;
+}
+
+.table tr {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.table tr:last-child {
+    margin-bottom: 0;
+}
+
+.table td {
+    display: block;
+    text-align: right;
+    border-bottom-width: 0;
+}
+
+.table td:last-child {
+    border-bottom-width: 1px;
+}
+
+.table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) {
+    .table tbody {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .table tr {
+        width: 50%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .table {
+        border-width: 1px;
+    }
+
+    .table tbody {
+        display: table-row-group;
+    }
+
+    .table td::before {
+        content: "''";
+        display: none;
+    }
+
+    .table th {
+        display: table-cell;
+    }
+
+    .table td {
+        display: table-cell;
+        border-bottom-width: 1px;
+        text-align: left;
+    }
+
+    .table tr {
+        display: table-row;
+        margin-bottom: 0;
+        width: auto;
+    }
+
+    .table thead {
+        display: table-header-group;
+        margin-bottom: 0;
+    }
+}
